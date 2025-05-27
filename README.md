@@ -144,6 +144,6 @@ All configuration can be overridden using environment variables:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
+## License(IGNORE)
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the LICENSE file for DETAILS .
