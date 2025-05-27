@@ -7,9 +7,9 @@ const contactRoutes = require('./routes/contactRoutes');
 const config = require('./config');
 
 const app = express();
-const port = config.port; // Use port from config
+const port = process.env.PORT || config.port; // Use Render's PORT env variable or fallback to config
 
-const dbURI = config.mongodbURI; // MongoDB connection URL from config
+const dbURI = process.env.MONGODB_URI || config.mongodbURI; // Use Render's MONGODB_URI or fallback to config
 
 mongoose.connect(dbURI)
   .then(() => console.log('MongoDB connected...'))
@@ -46,4 +46,5 @@ app.use((err, req, res, next) => {
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+  console.log(`MongoDB connected: ${dbURI}`);
 }); 
